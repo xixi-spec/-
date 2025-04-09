@@ -31,16 +31,13 @@
         <div class="logo-container">
         <a href="#" class="logo">绿光厨房</a>
         </div>
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="搜索食材..." oninput="searchRecipes()">
-            <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24">...</svg>
-        </div>
     </div>
 </nav>
 <!-- 新增选项卡导航 -->
 <div class="tab-container">
     <nav class="tab-nav">
-        <button class="tab-button active" onclick="switchTab('recipes')">食谱区</button>
+        <button class="tab-button active" onclick="switchTab('main')">首页</button>
+        <button class="tab-button" onclick="switchTab('recipes')">食谱区</button>
         <button class="tab-button" onclick="switchTab('survey')">饮食问卷</button>
         <button class="tab-button" onclick="switchTab('oil')">健康油脂区</button>
         <button class="tab-button" onclick="switchTab('science')">科普区</button>
@@ -48,15 +45,61 @@
 </div>
 
 <main>
+    <!-- 新增公司简介 -->
+    <section id="main" class="tab-content active">
+        <!-- 公司logo -->
+        <div class="company-intro">
+            <div class="company-logo">
+                <img src="图片/公司logo.png" alt="脂衡安生物科技有限公司 Logo">
+            </div>
+        <h1>脂衡安生物科技有限公司</h1>
+        <div class="intro-content">
+            <h2>公司简介</h2>
+            <p>脂衡安生物科技有限公司（Equilipid Biotech）是一家以"科学营养，健康生活"为核心理念的科技型企业，专注于开发功能性健康食用油及配套数字化服务。</p>
+            <p>在这里，你可以：</p>
+            <ul>
+                <li>了解脂肪酸的健康秘密</li>
+                <li>进行身体数据评估获取定制食谱</li>
+                <li>与食品科学专家在线交流</li>
+            </ul>
+
+            <h2>产品介绍</h2>
+            <div class="product">
+                <div class="product-header">
+                    <div class="product-logo">
+                        <img src="图片/产品logo.png" alt="脂衡安红花籽调和油 Logo">
+                    </div>
+                    <h3>脂衡安红花籽调和油</h3>
+                </div>
+                <p>精选优质红花籽原料，通过科学配比使ω-6与ω-3脂肪酸达到黄金比例（4:1）</p>
+                <div class="product-variants">
+                    <div class="variant">
+                        <h4>500ml瓶装</h4>
+                        <p>家庭装设计，满足日常烹饪需求</p>
+                    </div>
+                    <div class="variant">
+                        <h4>200ml喷壶装</h4>
+                        <p>精准控量，便携式设计适合上班族</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
     <!-- 食谱区 -->
-    <section id="recipes" class="tab-content active">
+    <section id="recipes" class="tab-content ">
         <div class="filters">
             <div class="filter-group">
                 <button class="filter-btn active" onclick="filterRecipes('all')">全部</button>
                 <button class="filter-btn" onclick="filterRecipes('healthy')">健康食谱</button>
                 <button class="filter-btn" onclick="filterRecipes('regional')">地区特色食物</button>
             </div>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="搜索健康食谱食材..." oninput="searchRecipes()">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24">...</svg>
+            </div>
         </div>
+
         <div id="healthy-recipes" class="recipe-section">
             <h2>健康食谱推荐</h2>
             <div class="recipe-card-container"></div>
@@ -335,9 +378,9 @@
 
             <!-- 图片区域（默认隐藏） -->
             <div id="oil-images" class="oil-images" style="display: none;">
-                <img src="../图片1.png" alt="推荐油脂" />
-                <img src="../图片2.png" alt="关键词" />
-                <img src="../图片3.png" alt="饼状图" />
+                <img src="图片/图片1.png" alt="推荐油脂" />
+                <img src="图片/图片2.png" alt="关键词" />
+                <img src="图片/图片3.png" alt="饼状图" />
             </div>
     </section>
 

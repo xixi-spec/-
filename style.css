@@ -56,10 +56,10 @@ body {
 
 /* 食谱卡片容器 */
 .recipe-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* 添加间距 */
-    justify-content: space-between; /* 横向排列，两端对齐 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 /* 单个食谱卡片 */
@@ -111,6 +111,8 @@ ul li {
 /* Logo 容器 */
 .logo-container {
     text-align: center; /* 文字居中 */
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 /* Logo 样式 */
@@ -209,7 +211,7 @@ ul li {
 
 /* 搜索框样式 */
 .search-bar {
-    max-width: 600px;
+    max-width: 500px;
     margin: 2rem auto;
     position: relative;
 }
@@ -249,7 +251,6 @@ ul li {
 /* 选项卡导航栏 */
 .tab-container {
     background: var(--green-100);
-    padding: 1.5rem 5%;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -287,7 +288,7 @@ ul li {
 /* 添加过渡动画 */
 .tab-content {
     display: none;
-    opacity: 0;
+    opacity: 1;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
     padding: 2rem;
@@ -527,4 +528,88 @@ ul li {
 
 .oil-images img:hover {
     transform: scale(1.05);
+}
+/* 公司 logo 放在公司名称前面 */
+.company-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company-logo {
+}
+
+.company-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+.intro-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.intro-content h2 {
+    color: var(--green-700);
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid var(--green-500);
+    padding-bottom: 0.5rem;
+}
+
+.product-variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.variant {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.variant h4 {
+    color: var(--green-500);
+    margin-bottom: 0.5rem;
+}
+/* 产品logo放在产品名称前面 */
+.product-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.product-logo {
+    margin-right: 15px;
+}
+
+.product-logo img {
+    max-width: 100px;
+    height: auto;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .product-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }

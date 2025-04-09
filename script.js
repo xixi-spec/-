@@ -40,9 +40,9 @@ function switchTab(tabId) {
 
     // 更新内容区域
     document.querySelectorAll('.tab-content').forEach(tab => {
-        tab.classList.remove('active');
+        tab.style.display = 'none';
     });
-    document.getElementById(tabId).classList.add('active');
+    document.getElementById(tabId).style.display = 'block';
 }
 
 
@@ -90,10 +90,11 @@ function filterRecipes(type) {
             break;
     }
 }
-
 // 4. 初始化页面时强制刷新状态
 document.addEventListener('DOMContentLoaded', () => {
-    filterRecipes('all'); // 默认显示全部内容并高亮按钮
+    // 初始化页面状态，而不是强制刷新
+    document.querySelectorAll('.tab-button')[0].classList.add('active');
+    document.querySelectorAll('.tab-content')[0].style.display = 'block';
 });
 // 提交按钮点击事件
 document.getElementById('submit-oil-form').addEventListener('click', function () {
